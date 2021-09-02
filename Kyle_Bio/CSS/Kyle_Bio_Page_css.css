@@ -1,0 +1,69 @@
+body{
+    background-color:rgb(77, 114, 238);
+    padding: 0;
+    margin: 0;
+}
+
+p{
+    font-size: 150%;
+    color:white;
+    font-family: sans-serif;
+}
+
+#title_div{
+    background-color:navy;
+    padding: 30px;
+    margin-bottom: 1%;
+}
+
+#bio_header{
+    font-size: 250%;
+    text-align: center;
+    
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    border-style:double;
+    border-width: 20pt;
+}
+
+#para_div{
+    padding: 0 0 3% 0;
+}
+
+#bio_paragraph{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right:5%;
+    background-color: navy;
+    border-style: solid;
+    border-color: lightblue;
+    border-radius: 20%;
+    
+}
+
+#back_button{
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);    
+}
+
+#button{
+    background-color: lightblue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    
+}
