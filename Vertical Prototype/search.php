@@ -16,12 +16,6 @@ $pdo = new PDO(
     ]
     );
 
-$email = $_POST['email'];
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$username = $_POST['username'];
-$password = $_POST['password'];
-
 //search
 $stmt = $pdo->prepare("SELECT * FROM `user` WHERE `firstname` LIKE ? OR `email`");
 $stmt->execute(["%".$_POST['search']."%"]);
@@ -29,9 +23,9 @@ $results = $stmt->fetchAll();
 if(isset($_POST['ajax'])){echo json_encode($results);}
 
 //insert data
-$stmt2 = pdo->prepare("INSERT INTO 'user' (email, username, firstname, lastname, password) VALUES ('$email','$username','$firstname','$lastname','$password')");
+$stmt2 = $pdo->prepare("INSERT INTO 'user' (email, username, firstname, lastname, password) VALUES ('email','username','firstname','lastname','password')");
 $stmt2->execute(["%".$_POST['Insert']."%"]);
-$result = $stmt->fetchAll();
+$result = $stmt2->fetchAll();
 if($result){
     $msg = "register successful";
     echo $msg;
