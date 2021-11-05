@@ -23,34 +23,7 @@
                     <button type="submit" class="btn btn-primary">Login</button>
                 
                 </form>
-            </div>
-            <div class="col-md-6">
-                <h2>Register Here</h2>
-                <form action="registration.php" method="post">
-                    <div class="form-group">
-                        <label>Firstname</label>
-                        <input type="text" name="firstname" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Lastname</label>
-                        <input type="text" name="lastname" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" name="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" name="user" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" required>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Login</button>
-                
-                </form>
+                <p>Dont have an Account? Create one <a href="create.php">Here</a></p>
             </div>
         
         </div>

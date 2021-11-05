@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-header('location:login.php')#This location should change to home html page when implemented. Or maybe back to login page
+header('location:login.php');#This location should change to home html page when implemented. Or maybe back to login page
 
 $con = mysqli_connect('localhost', 'cen4010_fa21_g15', 'N55POhE+OF', 'cen4010_fa21_g15');
 
