@@ -20,7 +20,4 @@ foreach($results as $r)
             "</div>".
         "</li>";
 }
-
-header("location: ../discussion.php");
-
 ?>
