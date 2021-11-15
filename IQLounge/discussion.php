@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>IQ Lounge - New Account</title>
+        <title>IQ Lounge - General Discussion</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -34,33 +34,71 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Help</a></li>
                     </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">Login</button>
+                    </form>
                 </div>
             </div>
         </nav>
-        <!--Features-->
-        <section class="py-5">
-            <h1 class="display-5 fw-bolder text-center">Create New Account</h1>
-            <div class="container mt-5 mb-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"> 
-                    <div>
-                        <div id="form" class="form">                 
-                        <!-- Login Form -->
-                        <form action="registration.php" method="post">
-                        <input type="text"  id="login" class="mb-1" name="firstname" placeholder="Enter Firstname">
-                        <input type="text"  id="login" class="mb-3" name="lastname" placeholder="Enter Lastname">
-                        <input type="text"  id="login" class="mb-1" name="email" placeholder="Enter Email">
-                        <input type="text"  id="login" class="mb-1" name="user" placeholder="Enter Username">
-
-                        <input type="password"  id="password" class="mb-1" name="password" placeholder="Enter Password">
-                        <input type="password"  id="confirmpassword" class="mb-3" name="password_check" placeholder="Confirm Password">
-                        <input type="submit"  value="Create Account" class="btn-primary mb-1">
-                        </form>
-
-                        </div>
-                      </div>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">General Discussion</h1>
+                    <p class="lead fw-normal text-white-50 mb-0"></p>
                 </div>
             </div>
-        </section>
+        </header>
+        <!-- Chat Room-->
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="comment-wrapper">
+                        <div class="panel panel-info">
+                            <div class="panel-heading ">
+                                Comment Panel
+                            </div>
+                            <div class="panel-body">
+                                <!-- post comment -->
+                                <form  name="postComment" id="postComment" method="post" action="util/insertGenDisc.php" >
+                                    <textarea form="postComment" name="content" class="form-control" placeholder="write a comment..." rows="3"></textarea>
+                                    <br>
+                                    <button form="postComment" type="submit" value="insert" class="btn btn-info pull-right">Post</button>
+                                </form>
+                                <div class="clearfix"></div>
+                                <hr>
+                                <ul class="media-list">
+                                    <?php
+require "util/dbConn.php";
+
+$comments = "SELECT * FROM post ORDER BY date";
+
+$results = mysqli_query($db, $comments);
+
+foreach($results as $r)
+{
+    echo
+        "<li class=\"media\">" .
+            "<a href=\"#\" class=\"pull-left\">".
+                "<img src=\"https://bootdey.com/img/Content/user_1.jpg\" alt=\"\" class=\"img-circle\">".
+            "</a>".
+            "<div class=\"media-body\">".
+                "<span class=\"text-muted pull-right\">".
+                    "<small class=\"text-muted\">" . $r['date'] . "</small>" .
+                "</span>".
+                "<p>". $r['content'] . "</p>" .
+            "</div>".
+        "</li>";
+}
+?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container">

@@ -15,6 +15,10 @@ $first = $_POST['firstname'];
 $last = $_POST['lastname'];
 $pass_check = $_POST['password_check'];
 
+#start encryption
+$hash = password_hash($pass, PASSWORD_DEFAULT);
+#end encrytion
+
 $s = " select * from user where username = '$name'";
 
 $result = mysqli_query($con, $s);
@@ -26,7 +30,7 @@ if($num == 1) {
     echo"username already taken";
 } else {
     if($pass == $pass_check) {
-        $reg = "insert into user(email, username, firstname, lastname, password) values ('$email', '$name', '$first', '$last', '$pass')";
+        $reg = "insert into user(email, username, firstname, lastname, password) values ('$email', '$name', '$first', '$last', '$hash')";
         mysqli_query($con, $reg);
         echo"Registration Successful";
     } else {
