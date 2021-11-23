@@ -11,7 +11,7 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/login.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
@@ -26,7 +26,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Rooms</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="discussion.html">General Discussion</a></li>
+                                <li><a class="dropdown-item" href="discussion.php">General Discussion</a></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><a class="dropdown-item" href="#!">TBA</a></li>
                                 <li><a class="dropdown-item" href="#!">TBA</a></li>
@@ -64,7 +64,7 @@
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container">
-                <button class="nav-item">About Us</button>
+                <a class="btn btn-secondary" href="https://lamp.cse.fau.edu/~cen4010_fa21_g15/index.html">About Us</a>
             </div>
         </footer>
         <!-- Bootstrap core JS-->
