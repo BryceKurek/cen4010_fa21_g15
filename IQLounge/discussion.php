@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+if(isset($_SESSION['userid']) && isset($_SESSION['username'])){
+    ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,8 +39,10 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Help</a></li>
                     </ul>
+                        <p>Welcome, <?php echo $_SESSION['firstname']; ?></p>
+                        <a class="btn btn-outline-dark" href ="logout.php">Logout</a>
                     
-                        <a class="btn btn-outline-dark" href="login.php">Login</a>
+                
                     
                 </div>
             </div>
@@ -111,3 +118,10 @@ foreach($results as $r)
         <script src="js/scripts.js"></script>
     </body>
 </html>
+<?php
+}
+else{
+    header("Location: login.php");
+    exit();
+}
+?>

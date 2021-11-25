@@ -48,7 +48,7 @@
                     <form action="validation.php" method="post"> <!-- Kyle: added form action and method -->
                         <input type="text"  id="login" class="mb-1" name="user" placeholder="Username">
                         <input type="password"  id="password" class="mb-3" name="password" placeholder="Password">  
-                        <input type="submit"  value="Log In" class="btn-primary text-uppercase mb-3">
+                        <button type="submit"  value="Log In" class="btn-primary text-uppercase mb-3">
                     </form>
                       
                     <!-- Forgot Password -->
