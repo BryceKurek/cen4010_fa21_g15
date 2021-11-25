@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-header('location:login.php');#relocation if php runs successfully
+//header('location:login.php');#relocation if php runs successfully
 
 $con = mysqli_connect('localhost', 'cen4010_fa21_g15', 'N55POhE+OF', 'cen4010_fa21_g15');
 
@@ -30,7 +30,7 @@ if($num == 1) {
     echo"username already taken";
 } else {
     if($pass == $pass_check) {
-        $reg = "insert into user(email, username, firstname, lastname, password) values ('$email', '$name', '$first', '$last', '$hash')";
+        $reg = "insert into user(email, username, firstname, lastname, password) values ('$email', '$name', '$first', '$last', '$pass')";
         mysqli_query($con, $reg);
         echo"Registration Successful";
     } else {

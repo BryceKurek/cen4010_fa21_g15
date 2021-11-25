@@ -39,7 +39,7 @@ if(isset($_SESSION['userid']) && isset($_SESSION['username'])){
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Help</a></li>
                     </ul>
-                        <p>Welcome, <?php echo $_SESSION['firstname']; ?></p>
+                        <p>Welcome, <?php echo $_SESSION['username']; ?></p>
                         <a class="btn btn-outline-dark" href ="logout.php">Logout</a>
                     
                 
