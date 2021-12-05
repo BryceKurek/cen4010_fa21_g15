@@ -1,9 +1,9 @@
 <?php
-require "dbConn.php";
+$conn = mysqli_connect("localhost","cen4010_fa21_g15","N55POhE+OF","cen4010_fa21_g15");
 
-$comments = "SELECT * FROM post ORDER BY date";
+$comments = "SELECT * FROM post, user WHERE post.userid = user.userid ORDER BY date";
 
-$results = mysqli_query($db, $comments);
+$results = mysqli_query($conn, $comments);
 
 foreach($results as $r)
 {

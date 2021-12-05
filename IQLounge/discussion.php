@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(isset($_SESSION['userid']) && isset($_SESSION['username'])){
+if(isset($_SESSION['userid']) && isset($_SESSION['username'])  && isset($_SESSION['firstname'])){
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +39,8 @@ if(isset($_SESSION['userid']) && isset($_SESSION['username'])){
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Help</a></li>
                     </ul>
-                        <p>Welcome, <?php echo $_SESSION['username']; ?></p>
+    
+                       <div class="panel-heading "><a>Welcome, <?php echo $_SESSION['firstname']; ?>&nbsp;&nbsp;&nbsp;</a></div>
                         <a class="btn btn-outline-dark" href ="logout.php">Logout</a>
                     
                 
@@ -76,11 +77,11 @@ if(isset($_SESSION['userid']) && isset($_SESSION['username'])){
                                 <hr>
                                 <ul class="media-list">
                                     <?php
-require "util/dbConn.php";
+require "dbConn.php";
 
-$comments = "SELECT * FROM post ORDER BY date";
+$comments = "SELECT * FROM post,user WHERE user.userid= post.userid ORDER BY date";
 
-$results = mysqli_query($db, $comments);
+$results = mysqli_query($conn, $comments);
 
 foreach($results as $r)
 {

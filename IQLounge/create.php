@@ -46,14 +46,14 @@
                         <div id="form" class="form">                 
                         <!-- Login Form -->
                         <form action="registration.php" method="post">
-                        <input type="text"  id="login" class="mb-1" name="firstname" placeholder="Enter Firstname">
-                        <input type="text"  id="login" class="mb-3" name="lastname" placeholder="Enter Lastname">
-                        <input type="text"  id="login" class="mb-1" name="email" placeholder="Enter Email">
-                        <input type="text"  id="login" class="mb-1" name="user" placeholder="Enter Username">
+                            <input type="text"  id="login" class="mb-1" name="firstname" placeholder="Enter Firstname" required>
+                            <input type="text"  id="login" class="mb-3" name="lastname" placeholder="Enter Lastname" required>
+                            <input type="text"  id="login" class="mb-1" name="email" placeholder="Enter Email" required>
+                            <input type="text"  id="login" class="mb-1" name="username" placeholder="Enter Username" required>
 
-                        <input type="password"  id="password" class="mb-1" name="password" placeholder="Enter Password">
-                        <input type="password"  id="confirmpassword" class="mb-3" name="password_check" placeholder="Confirm Password">
-                        <input type="submit"  value="Create Account" class="btn-primary mb-1">
+                            <input type="password"  id="password" class="mb-1" name="password" placeholder="Enter Password" required>
+                            <input type="password"  id="confirmpassword" class="mb-3" name="password_check" placeholder="Confirm Password" required>
+                            <input type="submit"  value="Create Account" class="btn-primary mb-1">
                         </form>
 
                         </div>
