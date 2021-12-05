@@ -2,7 +2,7 @@
 
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+       <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
@@ -46,6 +46,9 @@
                     <div id="form" class="form mb-5">                 
                     <!-- Login Form -->
                     <form action="validation.php" method="post"> <!-- Kyle: added form action and method -->
+                    <?php if(isset($_GET['error'])) { ?>
+                        <p class = "error"> <?php echo $_GET['error']; ?> </p>
+                        <?php } ?>
                         <input type="text"  id="login" class="mb-1" name="user" placeholder="Username">
                         <input type="password"  id="password" class="mb-3" name="password" placeholder="Password">  
                         <input type="submit"  value="Log In" class="btn-primary text-uppercase mb-3">

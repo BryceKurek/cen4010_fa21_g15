@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+if(isset($_SESSION['userid']) && isset($_SESSION['username'])){
+    ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,8 +39,11 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Help</a></li>
                     </ul>
-                    
-                        <a class="btn btn-outline-dark" href="login.php">Login</a>
+		
+                       <div class="panel-heading "><a>Welcome, <?php echo $_SESSION['firstname']; ?>&nbsp;&nbsp;&nbsp;</a></div>
+                       <a class="btn btn-outline-dark" href ="logout.php">Logout</a>
+                   
+            
                     
                 </div>
             </div>
@@ -69,28 +77,28 @@
                                 <hr>
                                 <ul class="media-list">
                                     <?php
-require "util/dbConn.php";
+					require "dbConn.php";
 
-$comments = "SELECT * FROM post ORDER BY date";
+					$comments = "SELECT * FROM post ORDER BY date";
 
-$results = mysqli_query($db, $comments);
+					$results = mysqli_query($conn, $comments);
 
-foreach($results as $r)
-{
-    echo
-        "<li class=\"media\">" .
-            "<a href=\"#\" class=\"pull-left\">".
-                "<img src=\"https://bootdey.com/img/Content/user_1.jpg\" alt=\"\" class=\"img-circle\">".
-            "</a>".
-            "<div class=\"media-body\">".
-                "<span class=\"text-muted pull-right\">".
-                    "<small class=\"text-muted\">" . $r['date'] . "</small>" .
-                "</span>".
-                "<p>". $r['content'] . "</p>" .
-            "</div>".
-        "</li>";
-}
-?>
+					foreach($results as $r)
+					{
+    						echo
+        					"<li class=\"media\">" .
+            					"<a href=\"#\" class=\"pull-left\">".
+                				"<img src=\"https://bootdey.com/img/Content/user_1.jpg\" alt=\"\" class=\"img-circle\">".
+            					"</a>".
+           					"<div class=\"media-body\">".
+                				"<span class=\"text-muted pull-right\">".
+                    				"<small class=\"text-muted\">" . $r['name'] . " - " . $r['date'] . "</small>" .
+                				"</span>".
+                				"<p>". $r['content'] . "</p>" .
+            					"</div>".
+        					"</li>";
+					}
+					?>
                                 </ul>
                             </div>
                         </div>
@@ -111,3 +119,10 @@ foreach($results as $r)
         <script src="js/scripts.js"></script>
     </body>
 </html>
+<?php
+}
+else{
+    header("Location: login.php");
+    exit();
+}
+?>

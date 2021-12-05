@@ -49,7 +49,7 @@
                         <input type="text"  id="login" class="mb-1" name="firstname" placeholder="Enter Firstname">
                         <input type="text"  id="login" class="mb-3" name="lastname" placeholder="Enter Lastname">
                         <input type="text"  id="login" class="mb-1" name="email" placeholder="Enter Email">
-                        <input type="text"  id="login" class="mb-1" name="user" placeholder="Enter Username">
+                        <input type="text"  id="login" class="mb-1" name="username" placeholder="Enter Username">
 
                         <input type="password"  id="password" class="mb-1" name="password" placeholder="Enter Password">
                         <input type="password"  id="confirmpassword" class="mb-3" name="password_check" placeholder="Confirm Password">
